@@ -246,7 +246,7 @@ class EpoClient(object):
         if res.message_type != Message.MESSAGE_TYPE_ERROR:
             ret_val = res.payload.decode(encoding=EpoClient._UTF_8)
             # Display the response
-            logger.debug("Response:\n{0}".format(ret_val))
+            logger.debug(u"Response:\n{}".format(ret_val))
             return ret_val
         else:
             raise Exception("Error: " + res.error_message + " (" + str(res.error_code) + ")")
